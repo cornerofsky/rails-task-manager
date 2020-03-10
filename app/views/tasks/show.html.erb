@@ -1,11 +1,15 @@
+<ul class="list-group">
+
 <h1>Task details page</h1>
   <% if @task.completed %>
-    <h3>[X] <%= @task.title %></h3>
+    <li><h3>[X] <%= @task.title %></h3></li>
   <% else %>
-    <h3>[ ] <%= @task.title %></h3>
+    <li><h3>[ ] <%= @task.title %></h3></li>
   <% end %>
 
 <p><%= @task.details %></p>
+</ul>
+
 
 <%= link_to "Edit task", edit_path(params[:id])  %>
 <%= link_to "Delete", task_path(params[:id]),
