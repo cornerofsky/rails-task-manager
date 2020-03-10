@@ -1,0 +1,15 @@
+<h1>Task details page</h1>
+  <% if @task.completed %>
+    <h3>[X] <%= @task.title %></h3>
+  <% else %>
+    <h3>[ ] <%= @task.title %></h3>
+  <% end %>
+
+<p><%= @task.details %></p>
+
+<%= link_to "Edit task", edit_path(params[:id])  %>
+<%= link_to "Delete", task_path(params[:id]),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+<%= link_to "Back to task list", tasks_path %>
